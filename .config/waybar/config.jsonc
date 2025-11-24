@@ -1,0 +1,18 @@
+{
+  "position": "top",
+  "layer": "top",
+  "reload_style_on_change": true,
+
+  "modules-left": ["hyprland/workspaces"],
+
+  "modules-center": ["clock"],
+  "clock": {
+    "format": "{:%H:%M}",
+    "timezone" : "America/Argentina/Buenos_Aires",
+},
+  
+  "modules-right": ["battery"],
+  "battery": {
+    "interval": 10
+  }
+}
