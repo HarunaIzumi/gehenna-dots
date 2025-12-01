@@ -1,26 +1,70 @@
 @define-color foreground #eeeeee;
+@define-color d-foreground #8c8c8c;
 @define-color background #2a2a2a;
 @define-color color #008080;
+@define-color d-color #155555;
 
 * {
-    font-family: AdwaitaMono Nerd Font;
-    font-size: 16px;
+    font-family: "AdwaitaMono Nerd Font";
+    font-size: 15px;
 }
 
 window#waybar {
+    all: unset;
+}
+
+tooltip {
+    background: @background;
     color: @foreground;
+}
+
+.modules-left {
+    padding: 7px;
+    margin: 10 0 5 10;
+    border-radius: 10px;
+    background: alpha(@background, 0.7);
+}
+
+.modules-center {
+    padding: 7px;
+    margin: 10 0 5 0;
+    border-radius: 10px;
+    background: alpha(@background, 0.7);
+}
+
+.modules-right {
+    padding: 7px;
+    margin: 10 10 5 0;
+    border-radius: 10px;
     background: alpha(@background, 0.7);
 }
 
 #workspaces button {
-    color: @foreground;
-}
-
-#workspaces button.active {
-    background: @color;
+    all: unset;
+    padding: 0px 12px 0px 6px;
+    color: lighter(@background);
+    transition: all 0.2s ease;
 }
 
 #workspaces button:hover {
-    color: @background;
-    background: @foreground;
+    color: @d-color;
+    border: none;
+    text-shadow: 0px 0px 3px alpha(@color, 0.5);
+    transition: all 0.2s ease;
+}
+
+#workspaces button.active {
+    color: @color;
+    transition: all 0.2s ease;
+}
+
+#clock:hover, #wireplumber:hover, #battery:hover, #network:hover, #bluetooth:hover {
+    text-shadow: 0px 0px 3px alpha(@foreground, 0.5);
+    transition: all 0.5s ease;
+}
+
+#clock, #wireplumber, #battery, #network, #bluetooth, #tray {
+    padding: 0px 5px;
+    color: @foreground;
+    transition: all 0.5s ease;
 }

@@ -4,10 +4,49 @@
     "spacing": 8,
     "reload_style_on_change": true,
 
-    "modules-left": ["hyprland/workspaces"],
-    
-    "modules-right": ["battery", "clock"],
+    "modules-left": ["clock"],
     "clock": {
-        "timezone": "America/Argentina/Buenos_Aires"    
+        "format": "{:%d.%m.%Y | %I:%M %p}",
+        "timezone": "America/Argentina/Buenos_Aires",
+        "tooltip": false
+    },
+    
+    "modules-center": ["hyprland/workspaces"],
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "default": "\uf111",
+        },
+        "persistent-workspaces": {
+            "*": [1, 2, 3, 4, 5]
+        }
+    },
+    
+    "modules-right": ["wireplumber", "battery", "network", "bluetooth", "tray"],
+    "wireplumber": {
+        "format": "{icon} {volume}%",
+        "format-muted": "\ueee8 0%",
+        "format-icons": ["\uf027", "\uf028"],
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "scroll-steps": 5
+    },
+    "battery": {
+        "format": "{icon} {capacity}%",
+        "format-icons": ["\uf244","\uf243", "\uf242", "\uf241", "\uf240"]
+    },
+    "network": {
+        "format-wifi": "\uf1eb {essid} ({signalStrength}%)",
+        "tooltip-format-wifi": "{ipaddr}",
+        "format-ethernet": "\uef09 {ifname}",
+        "tooltip-format-ethernet": "{ifname}",
+        "format-disconnected": "\udb85\udeb5 Disconnected",
+        "tooltip-format-disconnected": "Disconnected",
+        "on-click": "kitty --class wbarmini -e nmtui"
+    },
+    "bluetooth": {
+        "format-on": "\udb80\udcaf",
+        "format-disabled": "\udb80\udcb2",
+        "format-no-controller": "\udb80\udcb2",
+        "on-click": "blueman-manager"
     }
 }
