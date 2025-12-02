@@ -4,11 +4,38 @@
     "spacing": 8,
     "reload_style_on_change": true,
 
-    "modules-left": ["clock"],
+    "modules-left": ["clock", "group/power"],
     "clock": {
         "format": "{:%d.%m.%Y | %I:%M %p}",
         "timezone": "America/Argentina/Buenos_Aires",
         "tooltip": false
+    },
+    "group/power": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 500,
+            "transition-left-to-right": true
+        },
+        "modules": ["custom/lmenu", "custom/exit", "custom/reboot", "custom/shutdown"]
+    },
+    "custom/lmenu": {
+        "format": "\uf101",
+        "tooltip": false
+    },
+    "custom/shutdown": {
+        "format": "\uf011",
+        "tooltip-format": "Shut down",
+        "on-click": "shutdown now"
+    },
+    "custom/reboot": {
+        "format": "\uf01e",
+        "tooltip-format": "Reboot",
+        "on-click": "reboot"
+    },
+    "custom/exit": {
+        "format": "\udb80\ude06",
+        "tooltip-format": "Log off",
+        "on-click": "hyprctl dispatch exit"
     },
     
     "modules-center": ["hyprland/workspaces"],
@@ -22,7 +49,7 @@
         }
     },
     
-    "modules-right": ["wireplumber", "battery", "network", "bluetooth", "tray"],
+    "modules-right": ["wireplumber", "battery", "network", "backlight", "bluetooth", "group/tray"],
     "wireplumber": {
         "format": "{icon} {volume}%",
         "format-muted": "\ueee8 0%",
@@ -43,10 +70,28 @@
         "tooltip-format-disconnected": "Disconnected",
         "on-click": "kitty --class wbarmini -e nmtui"
     },
+    "backlight": {
+        "format": "\udb80\udcdf {percent}%"
+    },
     "bluetooth": {
         "format-on": "\udb80\udcaf",
         "format-disabled": "\udb80\udcb2",
         "format-no-controller": "\udb80\udcb2",
         "on-click": "blueman-manager"
+    },
+    "group/tray": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 500,
+            "transition-left-to-right": false
+        },
+        "modules": ["custom/rmenu", "tray"]
+    },
+    "custom/rmenu": {
+        "format": "\uf100",
+        "tooltip": false
+    },
+    "tray": {
+        "spacing": 10
     }
 }
