@@ -49,7 +49,7 @@
         }
     },
     
-    "modules-right": ["wireplumber", "battery", "network", "backlight", "bluetooth", "group/tray"],
+    "modules-right": ["wireplumber", "battery", "network", "backlight", "bluetooth", "tray"],
     "wireplumber": {
         "format": "{icon} {volume}%",
         "format-muted": "\ueee8 0%",
@@ -78,18 +78,6 @@
         "format-disabled": "\udb80\udcb2",
         "format-no-controller": "\udb80\udcb2",
         "on-click": "blueman-manager"
-    },
-    "group/tray": {
-        "orientation": "inherit",
-        "drawer": {
-            "transition-duration": 500,
-            "transition-left-to-right": false
-        },
-        "modules": ["custom/rmenu", "tray"]
-    },
-    "custom/rmenu": {
-        "format": "\uf100",
-        "tooltip": false
     },
     "tray": {
         "spacing": 10
