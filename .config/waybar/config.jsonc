@@ -75,6 +75,7 @@
     },
     "bluetooth": {
         "format-on": "\udb80\udcaf",
+        "format-connected": "\udb80\udcaf",
         "format-disabled": "",
         "format-no-controller": "\udb80\udcb2",
         "on-click": "blueman-manager"
