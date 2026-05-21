@@ -158,3 +158,6 @@ source "$OSH"/oh-my-bash.sh
 # alias ohmybash="mate ~/.oh-my-bash"
 alias ls="eza -a --icons"
 alias cat="bat"
+
+# Created by `pipx` on 2026-05-04 03:05:44
+export PATH="$PATH:/home/haru/.local/bin"
