@@ -35,7 +35,7 @@
     "custom/exit": {
         "format": "\udb80\ude06",
         "tooltip-format": "Log off",
-        "on-click": "hyprctl dispatch exit"
+        "on-click": "hyprshutdown"
     },
     
     "modules-center": ["hyprland/workspaces"],
