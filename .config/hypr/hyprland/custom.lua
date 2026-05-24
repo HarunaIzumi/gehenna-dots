@@ -6,10 +6,7 @@
 hl.bind("SUPER + ALT + R", hl.dsp.exec_cmd("killall -SIGUSR2 waybar"))
 
 -- Go to the previous workspace with ALT + TAB
--- hl.bind("ALT + TAB", function()
---   hl.dispatch(hl.dsp.window.cycle_next())
---   hl.dispatch(hl.dsp.window.bring_to_top())
--- end)
+hl.bind("ALT + TAB", hl.dsp.focus({workspace = "previous"}))
 
 -- Floating mini terminal with mainMod + T
 hl.bind("SUPER + T", hl.dsp.exec_cmd("kitty", {float = true, size = {640, 480}, move = {"(monitor_w-window_w-5)", "(monitor_h-window_h-5)"}}))
